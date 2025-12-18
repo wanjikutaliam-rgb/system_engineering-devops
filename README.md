@@ -8,7 +8,7 @@ This repository contains shell scripting exercises for the System Engineering & 
 ## Scripts
 - **0-hello_world**: Prints "Hello, World" to the standard output.
 - **1-confused_smiley**: [Description of Task 1 – add later].
-- **…**: [Add descriptions for other scripts as you complete them].
+- **…**: [Add descriptions for other scripts as you complete them]. TY
 
 ## How to Run
 1. Make sure the script is executable:
