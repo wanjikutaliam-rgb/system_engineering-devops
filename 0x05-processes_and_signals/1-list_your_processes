@@ -1,11 +1,4 @@
-$ ./1-list_your_processes | head -10
-USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
-root         2  0.0  0.0      0     0 ?        S    Feb13   0:00 [kthreadd]
-root         3  0.0  0.0      0     0 ?        S    Feb13   0:00  \_ [ksoftirqd/0]
-root         4  0.0  0.0      0     0 ?        S    Feb13   0:00  \_ [kworker/0:0]
-root         5  0.0  0.0      0     0 ?        S<   Feb13   0:00  \_ [kworker/0:0H]
-root         7  0.0  0.0      0     0 ?        S    Feb13   0:02  \_ [rcu_sched]
-root         8  0.0  0.0      0     0 ?        S    Feb13   0:03  \_ [rcuos/0]
-root         9  0.0  0.0      0     0 ?        S    Feb13   0:00  \_ [rcu_bh]
-root        10  0.0  0.0      0     0 ?        S    Feb13   0:00  \_ [rcuob/0]
-root        11  0.0  0.0      0     0 ?        S    Feb13   0:00  \_ [migration/0]
+#!/usr/bin/env bash
+# This script displays a list of all currently running processes including hierarchy
+
+ps -ef --forest
