@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# This script runs infinitely and reacts to SIGTERM by printing a message
+
+# Trap the SIGTERM signal and execute a function
+trap 'echo "I am invincible!!!"' SIGTERM
+
+# Infinite loop
+while true; do
+    echo "To infinity and beyond"
+    sleep 2
+done
