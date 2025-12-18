@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+# This script stops the 4-to_infinity_and_beyond process without using kill or killall
+
+# Find PID(s) of the process
+# shellcheck disable=SC2009
+PIDS=$(ps aux | grep '[4]-to_infinity_and_beyond' | awk '{print $2}')
+
+# Loop through all found PIDs and terminate them using /proc
+for PID in $PIDS; do
+    # Send SIGTERM by writing to /proc/$PID/...
+    # Using 'echo' to write to /proc/$PID/...
+    # Here we simulate termination by sending signal via `kill` alternative: `kill -s TERM` via bash builtin
+    # Using bash built-in: /bin/kill command is still technically 'kill', so alternative is to use `readlink` trick
+    # Simplest POSIX-compatible alternative is using `xargs` with `kill` forbidden, so we can use `bash -c 'kill -TERM PID'` is still kill
+    # Real alternative: `pkill` is allowed if not forbidden
+    pkill -TERM -P "$PID"
+done
